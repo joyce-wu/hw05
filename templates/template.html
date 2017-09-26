@@ -4,14 +4,16 @@
   <title>{{foo}}</title>
 </head>
 <body>
-<table>
-  {% for i in collection %}
-    <tr>
-    {% for x in i %}
-    <td>x</td>
+  <table>
+    {% for i in collection %}
+      <tr>
+      {% for x in i %}
+        <td> x </td>
+      {% endfor %}
+      </tr>
     {% endfor %}
-    </tr>
-  {% endfor %}
-
+  </table>
+  <br>
+  {{randJob}}
 </body>
 </html>
