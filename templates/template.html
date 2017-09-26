@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{foo}}</title>
+</head>
+<body>
+<table>
+  {% for i in collection %}
+    <tr>
+    {% for x in i %}
+    <td>x</td>
+    {% endfor %}
+    </tr>
+  {% endfor %}
+
+</body>
+</html>
