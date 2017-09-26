@@ -13,8 +13,9 @@ while (i < len(lines)):
     jobList[i] = line
     i += 1
 
+#use our last hw to get a random job
 job =
 
 @app.route("/occupations")
 def template():
-    return app.render_template("template.html", foo = "Random Job", collection = jobList, randJob)
+    return app.render_template("template.html", foo = "Random Job", collection = jobList, randJob = job)
