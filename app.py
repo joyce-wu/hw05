@@ -22,9 +22,18 @@ while (i < len(lines)):
     jobList.append(line)
     i += 1
 
-
+#use our last hw to get a random job
+'''brute force random occupation
+myList = []
+#goes through each list, multiplying each percentage by 10
+for job in jobList:
+    if not (job[0] == "Job Class" or job[0] == "Total"):
+        val = Decimal(job[1]) * 10
+        for x in range(val):
+            myList.append(job[0]) #adds occupation by value
+job = random.choice(myList) #randomly chooses occupation from list
 '''
-#Get a random job
+#less memory intensive way
 ramdom = random.randrange(len(jobList) - 1)
 i = 1
 while (ramdom > 0):
@@ -32,35 +41,17 @@ while (ramdom > 0):
     i += 1
 job = jobList[i]
 
-@app.route("/occupations")
-def template():
-    return app.render_template("template.html", foo = "Random Job", collection = jobList, randJob = job)
-
-#quality of life
-@app.route('/')
-def hello():
-	return "<a href= '/occupations'>go here</a>."
-
-if __name__ == '__main__':
-'''
-
-#use our last hw to get a random job
-myList = []
-    #goes through each list, multiplying each percentage by 10
-for job in jobList:
-    if not (job[0] == "Job Class" or job[0] == "Total"):
-        val = Decimal(job[1]) * 10
-        for x in range(val):
-            myList.append(job[0]) #adds occupation by value
-job = random.choice(myList) #randomly chooses occupation from list
-
+#Quality of life
 @app.route("/")
 def index():
     return "<html>Look at occupations <a href='/occupations'>here</a>.</html>"
 
+#Page that has the goods
+##note: Job does not randomize on reload, but on server start
 @app.route("/occupations")
 def template():
     return render_template("template.html", foo = "Random Job", collection = jobList, randJob = job)
+
 
 if __name__ == "__main__":
     app.debug = True
