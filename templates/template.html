@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{{foo}}</title>
+  <title>{{title}}</title>
 </head>
 <body>
   <!-- Table created from the csv file-->
   <table>
-    {% for i in collection %}
+    {% for i in table %}
       <tr>
       {% for x in i %}
         <td> {{x}} </td>
@@ -15,7 +15,7 @@
     {% endfor %}
   </table>
   <br>
-  <!--Read the name-->
+  <!--Returns a random occupation-->
   Random Occupation: {{randJob}}
 </body>
 </html>
