@@ -25,8 +25,8 @@ def getJobs(fileName):
         i += 1
     return jobList
 
-# load the table into memory since it doesn't change
-jobs = getJobs("occupations.csv")
+# load the table into memory since it doesn't change + easier file changes
+jobs = getJobs("data/occupations.csv")
 
 
 # use our last hw to get a random job
@@ -49,7 +49,7 @@ def randomJob(jobList):
     while (ramdom > 0):
         ramdom -= float(jobList[i][1])
         i += 1
-    job = jobList[i]
+    return jobList[i][0] + ", " + jobList[i][1]
 
 # Quality of life
 @app.route("/")
