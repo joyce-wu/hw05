@@ -5,7 +5,6 @@
 
 from flask import Flask, render_template
 import random
-#from decimal import Decimal for bash method
 
 app = Flask(__name__)
 
